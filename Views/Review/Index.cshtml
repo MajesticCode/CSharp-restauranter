@@ -1,0 +1,37 @@
+@{
+    ViewData["Title"] = "Add a Review";
+}
+
+@model restauranter.Models.Review
+
+<form asp-controller="Review" asp-action="AddReview">
+    <fieldset>
+        <legend>Write a new review</legend>
+        <p>
+            <label asp-for="Reviewer"></label>
+            <input asp-for="Reviewer"/>
+            <span asp-validation-for="Reviewer"></span>
+        </p>
+        <p>
+            <label asp-for="Restaurant"></label>
+            <input asp-for="Restaurant"/>
+            <span asp-validation-for="Restaurant"></span>
+        </p>
+        <p>
+            <label asp-for="ReviewText"></label>
+            <textarea asp-for="ReviewText" rows="4" cols="40"></textarea>
+            <span asp-validation-for="ReviewText"></span>
+        </p>
+        <p>
+            <label asp-for="VisitedAt"></label>
+            <input asp-for="VisitedAt" type="date"/>
+            <span asp-validation-for="VisitedAt"></span>
+        </p>
+        <p>
+            <label asp-for="Stars"></label>
+            <input asp-for="Stars" type="number" min="0" max="5"/>
+            <span asp-validation-for="Stars"></span>
+        </p>
+        <button>Submit</button>
+    </fieldset>
+</form>
